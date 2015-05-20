@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+
+	<title>Server</title>
+	
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/dhg/Skeleton/gh-pages/dist/css/skeleton.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="container" id="menu">
+		<h6><a href="#home">RaspiServer</a> | <a href="#arduinoFirmata">Arduino Firmata</a> | <!-- <a href="#sensorShield">Arduino Sensor Shield</a> | --> <a href="#spark">Spark Leds </a> | <a href="#sparkRelay">Spark Core Relays</a></h6>
+
+		<hr class="sep">
+
+		<div id="home">
+			<h1>RaspiServer</h1>
+			<h6>Un serveur NodeJS sur RaspberryPi</h6>
+
+			<hr>
+
+			<img id="captureImg" class="u-max-full-width" src="" alt="">
+			<br>
+			<button id="getCapture" class="button-primary">PRENDRE UNE PHOTO</button>
+
+			<hr>
+
+			<h5>NodeJS and RaspiCam</h5>
+			<ul>
+				<li><a href="http://nodejs.org/">http://nodejs.org/</a></li>
+				<li><a href="http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md">http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md</a></li>
+				<li><a href="https://picamera.readthedocs.org/en/release-1.7/index.html">https://picamera.readthedocs.org/en/release-1.7/index.html</a></li>
+				<li><a href="https://github.com/troyth/node-raspicam">https://github.com/troyth/node-raspicam</a></li>
+				<!-- <li><a href="http://thejackalofjavascript.com/rpi-live-streaming/">http://thejackalofjavascript.com/rpi-live-streaming/</a></li> -->
+			</ul>
+		</div>
+
+		<hr class="sep">
+
+		<div id="arduinoFirmata">
+			<h1>Arduino Firmata</h1>
+			<h6>Interactions avec une Arduino UNO connectée en Sérial au serveur Raspberry PI</h6>
+			
+			<hr>
+
+			<div class="row">
+				<div class="four columns">
+					<h3>Led</h3>
+					<hr>
+					<button class='button-primary' id='on'>ALLUMER</button>
+					<button id='off'>ÉTEINDRE</button>
+				</div>
+				<div class="four columns">
+					<h3 id="ref">Potentiomètre</h3>
+					<hr>
+					<canvas id="cnvs"></canvas>
+				</div>
+				<div class="four columns">
+					<h3>Température</h3>
+					<hr>
+					<p><span id="temp"></span>°C</p>
+				</div>
+			</div>
+			
+			<hr>
+
+			<h5>Firmata</h5>
+			<p>
+				Firmata a generic protocol for communicating with microcontrollers like the Arduino from software on a host computer.
+			</p>
+			<ul>
+				<li><a href="http://firmata.sourceforge.net/wiki/Design_Issues">http://firmata.sourceforge.net/wiki/Design_Issues</a></li>
+				<li><a href="http://arduino.cc/en/Reference/Firmata">http://arduino.cc/en/Reference/Firmata</a></li>
+				<li><a href="http://firmata.org/wiki/Main_Page">http://firmata.org/wiki/Main_Page</a></li>
+				<li><a href="https://github.com/firmata/protocol">https://github.com/firmata/protocol</a></li>
+			</ul>
+
+			<hr>
+
+			<h5>Johnny-Five</h5>
+			<p>
+				Johnny-Five is an Open Source, IoT and Robotics programming framework, developed at Bocoup. Johnny-Five programs can be written for Arduino (all models), Electric Imp, Beagle Bone, Intel Galileo & Edison, Linino One, Pinoccio, Raspberry Pi, Spark Core, TI Launchpad and more!
+			</p>
+			<ul>
+				<li><a href="https://github.com/rwaldron/johnny-five">https://github.com/rwaldron/johnny-five</a></li>
+				<li><a href="http://node-ardx.org/">http://node-ardx.org/</a></li>
+			</ul>
+		</div>
+
+		<!-- 
+		<hr class="sep">
+		
+		<div id="sensorshield">
+			<h1>Arduino Sensor Shield</h1>
+			<h6>Communication Serial avec une Arduino UNO</h6>
+		
+			<hr>
+		
+			<p id="sensorShieldData"></p>
+			<div class="row">
+				<div class="three columns">
+					<h6>Photorésistance</h6>
+					<hr>
+					<button id="sensorlight"></button>
+				</div>
+				<div class="three columns">
+					<h6>Boutons</h6>
+					<hr>
+					<button id="sensorbtn0" class=""></button>
+					<button id="sensorbtn1" class=""></button><br>
+					<button id="sensorbtn2" class=""></button>
+					<button id="sensorbtn3" class=""></button>
+				</div>
+				<div class="three columns">
+					<h6>Interrupteurs</h6>
+					<hr>
+					<button id="sensorswitch0"></button><br>
+					<button id="sensorswitch1"></button><br>
+					<button id="sensorswitch2"></button>
+				</div>
+				<div class="three columns">
+					<h6>Potentiomètres</h6>
+					<hr>
+					<hr class="sensorslider" id="sensorslider0">
+					<hr class="sensorslider" id="sensorslider1">
+					<hr class="sensorslider" id="sensorslider2">
+					<hr class="sensorslider" id="sensorslider3">
+				</div>
+			</div>
+		
+			<hr>
+		
+			<ul>
+				<li><a href="https://www.npmjs.com/package/serialport">https://www.npmjs.com/package/serialport</a></li>
+			</ul>
+		</div> 
+		-->
+
+		<hr class="sep">
+
+		<div id="spark">
+			<h1>Spark Core Leds</h1>
+			<h6>Contrôle de leds avec un Spark Core</h6>
+
+			<hr>
+
+			<h6>Spark connecté: <span id="sparkLedOn">False</span></h6>
+			<div class="row">
+				<div class="four columns">
+					<button id="led0" class="off">Led Jaune</button>
+				</div>
+				<div class="four columns">
+					<button id="led1" class="off">Led Bleue</button>
+				</div>
+				<div class="four columns">
+					<button id="led2" class="off">Led Verte</button>
+				</div>
+			</div>
+
+			<hr>
+
+			<ul>
+				<li><a href="http://docs.spark.io/javascript/">http://docs.spark.io/javascript/</a></li>
+				<li><a href="https://www.spark.io/build/">https://www.spark.io/build/</a></li>
+			</ul>
+		</div>
+
+		<hr class="sep">
+
+		<div id="sparkRelay">
+			<h1>Spark Core Relais</h1>
+			<h6>Contrôle de relais avec un Spark Core</h6>
+
+			<hr>
+
+			<h6>Spark connecté: <span id="sparkRelayOn">False</span></h6>
+			<div class="row">
+				<div class="three columns"><button id="relay0" onclick='toggleRelay(0);'>Relais 1</button></div>
+				<div class="three columns"><button id="relay1" onclick='toggleRelay(1);'>Relais 2</button></div>
+				<div class="three columns"><button id="relay2" onclick='toggleRelay(2);'>Relais 3</button></div>
+				<div class="three columns"><button id="relay3" onclick='toggleRelay(3);'>Relais 4</button></div>
+			</div>
+
+			<hr>
+
+			<ul>
+				<li><a href="http://docs.spark.io/javascript/">http://docs.spark.io/javascript/</a></li>
+				<li><a href="http://docs.spark.io/shields/">http://docs.spark.io/shields/</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

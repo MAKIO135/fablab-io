@@ -1,0 +1,35 @@
+hr.sep{
+	border-top: 5px solid #222;
+}
+
+.off{
+	background-color: #000; 
+}
+
+.sensorslider{
+	margin-left: 0; 
+	border-top: 20px solid #222;
+	margin-bottom: -20px;
+	width: 0px;
+}
+
+#led0.off{
+	background-color: #9B8400;
+}
+#led0.on{
+	background-color: #FFDC00;
+}
+
+#led1.off{
+	background-color: #4E859B;
+}
+#led1.on{
+	background-color: #7FDBFF;
+}
+
+#led2.off{
+	background-color: #029B42;
+}
+#led2.on{
+	background-color: #01FF70;
+}
