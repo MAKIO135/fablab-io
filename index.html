@@ -15,30 +15,29 @@
 
 <body>
 	<div class="container" id="menu">
-		<h6><a href="#home">RaspiServer</a> | <a href="#arduinoFirmata">Arduino Firmata</a> | <!-- <a href="#sensorShield">Arduino Sensor Shield</a> | --> <a href="#spark">Spark Leds </a> | <a href="#sparkRelay">Spark Core Relays</a></h6>
+		<h6><a href="#home">Cameras IP</a> | <a href="#arduinoFirmata">Arduino Firmata</a> | <!-- <a href="#sensorShield">Arduino Sensor Shield</a> | --> <a href="#spark">Spark Leds </a> | <a href="#sparkRelay">Spark Core Relays</a></h6>
 
 		<hr class="sep">
 
 		<div id="home">
-			<h1>RaspiServer</h1>
-			<h6>Un serveur NodeJS sur RaspberryPi</h6>
+			<h1>Cameras IP</h1>
 
 			<hr>
 
-			<img id="captureImg" class="u-max-full-width" src="" alt="">
 			<br>
-			<button id="getCapture" class="button-primary">PRENDRE UNE PHOTO</button>
+			<button id="getCapture" class="button-primary">Connection aux caméras</button>
+			<hr id="loader"></hr>
+			<iframe id="ipcamera1" class="ipcamera" src="http://156.18.52.28/" width="100%" height="600"></iframe>
+			<iframe id="ipcamera2" class="ipcamera" src="http://156.18.52.40/" width="100%" height="600"></iframe>
+			<!-- <hr> -->
 
-			<hr>
-
-			<h5>NodeJS and RaspiCam</h5>
+			<!-- <h5>NodeJS and RaspiCam</h5>
 			<ul>
 				<li><a href="http://nodejs.org/">http://nodejs.org/</a></li>
 				<li><a href="http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md">http://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md</a></li>
 				<li><a href="https://picamera.readthedocs.org/en/release-1.7/index.html">https://picamera.readthedocs.org/en/release-1.7/index.html</a></li>
 				<li><a href="https://github.com/troyth/node-raspicam">https://github.com/troyth/node-raspicam</a></li>
-				<!-- <li><a href="http://thejackalofjavascript.com/rpi-live-streaming/">http://thejackalofjavascript.com/rpi-live-streaming/</a></li> -->
-			</ul>
+			</ul> -->
 		</div>
 
 		<hr class="sep">

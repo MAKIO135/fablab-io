@@ -2,6 +2,16 @@ hr.sep{
 	border-top: 5px solid #222;
 }
 
+#loader{
+	display: none;
+	border-top: 20px solid #f00;
+	width: 0;
+}
+
+.ipcamera{
+	display: none;
+}
+
 .off{
 	background-color: #000; 
 }

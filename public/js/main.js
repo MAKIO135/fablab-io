@@ -1,25 +1,27 @@
 $( document ).ready(function() {
-	var socket = io.connect( 'http://156.18.52.118/' );
+
+	var socket = io.connect( 'http://156.18.52.2/' );
 
 	socket.on( 'connected', function ( data ) {
 		console.log( data );
 	} );
 	///////////////////////////////////////////////////////////////////
 	/*
-		    ____                   _ ______              
-		   / __ \____ __________  (_) ____/___ _____ ___ 
-		  / /_/ / __ `/ ___/ __ \/ / /   / __ `/ __ `__ \
-		 / _, _/ /_/ (__  ) /_/ / / /___/ /_/ / / / / / /
-		/_/ |_|\__,_/____/ .___/_/\____/\__,_/_/ /_/ /_/ 
-		                /_/                              
+			    _       ______              
+			   (_)___  / ____/___ _____ ___ 
+			  / / __ \/ /   / __ `/ __ `__ \
+			 / / /_/ / /___/ /_/ / / / / / /
+			/_/ .___/\____/\__,_/_/ /_/ /_/ 
+			 /_/                                         
 	*/
-
 		$( '#getCapture' ).click( function() {
 			socket.emit( 'getCapture', {} );
-		} );
-
-		socket.on( 'capture', function( url ){
-			$('#captureImg').attr('src', url);
+			$('#loader').show().animate({"width":"100%"}, 10000, function(){
+				$('#loader').hide();
+				$( '#getCapture' ).hide();
+				$('#ipcamera1').show();
+				$('#ipcamera2').show();
+			});
 		} );
 
 	///////////////////////////////////////////////////////////////////
@@ -150,7 +152,7 @@ $( document ).ready(function() {
 			};
 		}
 
-		for (var i = 0; i < Things.length; i++) {
+		for (var i = 0; i < sparkLeds.length; i++) {
 			$('#led'+i).click( function(){
 				sparkLeds[i] = 1-sparkLeds[i];
 				toggleLed(i);
